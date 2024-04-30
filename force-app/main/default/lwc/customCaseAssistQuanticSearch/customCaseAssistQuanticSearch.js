@@ -14,7 +14,7 @@ const SS_LOCALSTORAGE_KEY = "smart-snippet-enabled";
 
 export default class CustomCaseAssistQuanticSearch extends LightningElement {
   /** @type {string} */
-  @api engineId
+  @api engineId = 'example-search-case-assist';
   /** @type {string} */
   @api searchHub = 'CaseAssist_GenAI';
   /** @type {string} */
@@ -25,19 +25,13 @@ export default class CustomCaseAssistQuanticSearch extends LightningElement {
   @api skipFirstSearch = false;
   /** @type {UrlManager} */
   urlManager;
-  /**
-   * A JSON-serialized object representing the current case fields.
-   * @type {string}
-   */
   @api caseData;
   /** @type {Function} */
   unsubscribeUrlManager;
   /** @type {string} */
   queryValue = ''
 
-  /** @type {object} */
-  _caseData = {};
-
+  
   connectedCallback() {
     registerComponentForInit(this, this.engineId);
     console.log("CaseData CustomCaseAssistQuanticSearch.registerComponentForInit()" + this.caseData)

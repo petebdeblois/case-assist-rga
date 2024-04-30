@@ -69,10 +69,6 @@ export default class CustomCaseAssistQuanticSearchInterface extends LightningEle
    */
   @api skipFirstSearch = false;
 
-  /**
-   * A JSON-serialized object representing the current case fields.
-   * @type {string}
-   */
   @api caseData;
 
   /** @type {SearchEngineOptions} */
@@ -100,7 +96,7 @@ export default class CustomCaseAssistQuanticSearchInterface extends LightningEle
   authenticatedContext = {};
   caseContext = {};
   rgaData = {};
-
+  
   connectedCallback() {
 
     this.template.addEventListener(
