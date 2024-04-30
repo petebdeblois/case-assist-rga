@@ -1,0 +1,26 @@
+<template>
+    <div class="search__container slds-p-around_medium" onregisterresulttemplates={handleResultTemplateRegistration}>
+      <c-custom-case-assist-quantic-search-interface engine-id={engineId} search-hub={searchHub} pipeline={pipeline} disable-state-in-url={disableStateInUrl} skip-first-search={skipFirstSearch} case-data={caseData}>
+        <div class="slds-grid slds-grid_vertical slds-grid_align-center">
+          <div class="slds-col">
+            <div class="slds-grid slds-gutters_direct slds-wrap main slds-grid_align-center">
+              <div class="slds-col slds-order_1 slds-large-order_2 slds-size_1-of-1 slds-large-size_10-of-12">
+                <c-quantic-generated-answer engine-id={engineId} ></c-quantic-generated-answer>
+                <!-- <c-quantic-query-error engine-id={engineId}></c-quantic-query-error>
+                <c-quantic-breadcrumb-manager engine-id={engineId}></c-quantic-breadcrumb-manager>
+                <c-quantic-did-you-mean engine-id={engineId}></c-quantic-did-you-mean>
+                <c-quantic-no-results engine-id={engineId}></c-quantic-no-results> -->
+                <!-- <c-quantic-smart-snippet-list engine-id={engineId}></c-quantic-smart-snippet-list> -->
+                <!-- <c-quantic-triggers engine-id={engineId}></c-quantic-triggers> -->
+                <c-quantic-result-list engine-id={engineId} fields-to-include="foldingcollection,foldingparent,foldingchild,date,objecttype,filetype"></c-quantic-result-list>
+                <div class="slds-var-m-vertical_medium" style="width:fit-content; margin: 1rem auto">
+                    <c-quantic-pager engine-id={engineId}></c-quantic-pager>
+                    <!-- <c-quantic-results-per-page engine-id={engineId}></c-quantic-results-per-page> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </c-custom-case-assist-quantic-search-interface>
+    </div>
+  </template>

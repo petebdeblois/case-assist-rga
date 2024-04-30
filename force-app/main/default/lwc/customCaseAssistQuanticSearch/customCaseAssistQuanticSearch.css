@@ -1,0 +1,67 @@
+c-quantic-result{
+    border: 1px solid red;
+}
+
+.metadata{
+    font-size: 12px; 
+    margin-top: 16px; 
+    color: #626971
+}
+
+.divider{
+    color: #E5E8E8;
+    margin: 0 16px;
+ 
+}
+
+.facet-filter-mobile {
+    display: none;
+}
+
+/*mobile support*/
+@media only screen and (max-width: 767px) {
+
+    /*remove side padding*/
+    .slds-gutters_direct>.slds-col:has(.facet-filter-mobile){
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    /*top of page*/
+    .slds-grid.slds-var-m-top_small:has(c-quantic-summary){
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    c-quantic-summary {
+        padding-bottom: 5px;
+    }
+    .slds-tabs_default__nav:has(c-quantic-tab), .slds-tabs_default__nav:has(c-quantic-tab){
+        display: none;
+    }
+    .sort__container[c-quanticSort_quanticSort]{
+        padding-bottom: 24px;
+    }
+
+    /* remove right panel */
+    c-quantic-recent-queries-list{
+        display: none;
+    }
+
+    c-quantic-recent-results-list{
+        display: none;
+    }
+
+    /* remove results per page*/
+    c-quantic-results-per-page {
+        display: none;
+    }
+
+    /*navigate results pages*/
+    .slds-var-m-vertical_medium{
+        display: flex;
+        justify-content: center;
+        padding-right: 0.5rem;
+        margin-bottom: 12px;
+    }
+}

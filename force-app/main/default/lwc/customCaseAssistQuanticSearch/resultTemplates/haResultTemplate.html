@@ -1,0 +1,41 @@
+<template>
+  <c-quantic-result-template>
+    <div slot="label" class="slds-grid slds-grid_vertical-align-center">
+      <div class="slds-m-right_x-small">
+        <c-quantic-result-label result={result}></c-quantic-result-label>
+       
+      </div>
+    </div>
+    <div slot="badges" class="slds-grid slds-grid_vertical-align-center">
+      <div class="slds-m-right_xx-small">
+        <c-quantic-result-badge variant="recommended" result={result}></c-quantic-result-badge>
+      </div>
+      <c-quantic-result-badge variant="featured" result={result}></c-quantic-result-badge>
+    </div>
+    <template if:true={resultHasPreview}>
+      <c-quantic-result-quickview slot="actions" engine-id={engineId} result={result}></c-quantic-result-quickview>
+    </template>
+    <p slot="date" class="slds-size_xx-small">
+      <lightning-formatted-date-time value={result.raw.date}></lightning-formatted-date-time>
+    </p>
+    <h3 slot="title" class="slds-truncate">
+      <span class="slds-m-left_xx-small">
+        <c-quantic-result-link result={result} engine-id={engineId}></c-quantic-result-link>
+      </span>
+    </h3>
+    <div slot="emphasized">
+      <p>
+      {result.sndescription}
+      </p>
+    </div>
+     <div slot="excerpt">
+     <p>
+      {result.Excerpt}
+    </p>
+    </div>
+     <div slot="bottom-metadata" class="slds-grid slds-text-align_left slds-m-top_xx-small" style="font-size: 10px">
+     <lightning-icon icon-name="utility:connected_apps" size="xx-small"></lightning-icon>
+     <span class="slds-m-left_xx-small">{result.raw.source}</span>
+   </div>
+  </c-quantic-result-template>
+</template>
